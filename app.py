@@ -2,7 +2,7 @@ import streamlit as st
 import openai
 
 # Remplacez 'your_openai_api_key_here' par votre clé API OpenAI réelle
-openai.api_key = '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'
+openai.api_key = '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'
 
 st.title("Générateur d'Images en Langue Fon")
 
