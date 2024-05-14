@@ -19,7 +19,7 @@ if st.button("Générer l'Image"):
     if description:
         try:
             # Appel à l'API d'OpenAI pour générer l'image
-            response = openai.Image.create(
+            response = openai.images.generate(
                 prompt=description,
                 n=1,
                 size="512x512"
