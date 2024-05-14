@@ -1,8 +1,13 @@
 import streamlit as st
 import openai
+from dotenv import load_dotenv
+import os
 
-# Remplacez 'your_openai_api_key_here' par votre clé API OpenAI réelle
-openai.api_key = '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'
+# Charger les variables d'environnement à partir du fichier .env
+load_dotenv()
+
+# Obtenez la clé API à partir de la variable d'environnement
+openai.api_key = os.getenv('OPENAI_API_KEY')
 
 st.title("Générateur d'Images en Langue Fon")
 
@@ -19,7 +24,7 @@ if st.button("Générer l'Image"):
     if description:
         try:
             # Appel à l'API d'OpenAI pour générer l'image
-            response = openai.images.generate(
+            response = openai.Image.create(
                 prompt=description,
                 n=1,
                 size="512x512"
